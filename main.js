@@ -3,7 +3,6 @@ var game = require('./game.js');
 var word = require('./word.js');
 var letter = require('./letter');
 
-
 var newLetter = new letter.LetterObj();
 var newWordObj = new word.WordObj();
 
@@ -12,7 +11,7 @@ console.log(game.word);
 
 function playGame(guess){
   if(newWordObj.winOrLose(game.word,newLetter.updated)){
-    // guess = 0;
+    guess = 0;
     console.log('You Win!')
   }
   if(guess > 0){
@@ -31,8 +30,8 @@ function playGame(guess){
             playGame(guess);
           }else{
             guess --
-            console.log('Sorry that letter is not found')
-            console.log(guess);
+            console.log('Sorry that letter is not found');
+            console.log('Guesses Left: ' + guess);
             playGame(guess);
           }
         })
