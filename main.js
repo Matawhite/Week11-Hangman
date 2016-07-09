@@ -5,12 +5,15 @@ var letter = require('./letter');
 
 
 var newLetter = new letter.LetterObj();
-var newwordObj = new word.WordObj();
-
-
-console.log(game.word);
+var newWordObj = new word.WordObj();
+console.log(game.wordArr);
 
 function playGame(guess){
+  console.log('word: ' + game.word);
+  if(newWordObj.winOrLose(newLetter.updated, guess)){
+    guess = 0;
+    console.log('You Win!')
+  }
   if(guess > 0){
     inquirer.prompt([
       {
@@ -18,7 +21,7 @@ function playGame(guess){
         message: 'Guess a letter.'
       }
       ]).then(function(answers) {
-        if(newwordObj.check(answers.letterGuessed)){
+        if(newWordObj.check(answers.letterGuessed)){
         guess --;
         console.log(newLetter.mainDisplay(answers.letterGuessed));
         console.log('Guesses Left: ' + guess);
@@ -34,11 +37,3 @@ function playGame(guess){
 }
 
 playGame(10);
-
-// function lose(guess){
-//   if(guess == 0){
-//     return true;
-//   }else{
-//     return false
-//   }
-// }

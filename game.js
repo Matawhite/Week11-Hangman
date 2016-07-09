@@ -1,16 +1,8 @@
 var dictionary = [
-    'ant man',
-    'black panther',
-    'black widow',
-    'captain america',
-    'captain marvel',
-    'hawkeye',
+    'bruce',
+    'tony',
     'hulk',
-    'iron man',
-    'luke cage',
-    'quicksilver',
     'thor',
-    'vision',
     'wasp'
   ];
 

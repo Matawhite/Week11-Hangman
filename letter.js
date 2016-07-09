@@ -13,7 +13,7 @@ exports.LetterObj = function(){
       if(this.word[i] === userInput){
         this.output.splice(i,1,userInput)
         this.updated = this.output.join("");
-        return this.updated;
+        return this.updated
       }
     }
   }
