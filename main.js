@@ -7,13 +7,13 @@ var newLetter = new letter.LetterObj();
 var newWordObj = new word.WordObj();
 
 // uncomment line 11 for testing
-console.log(game.word);
+// console.log(game.word);
 
 function playGame(guess){
   if(newWordObj.winOrLose(game.word,newLetter.updated)){
     guess = 0;
     console.log('You Win!')
-  }
+  }else{
   if(guess > 0){
     inquirer.prompt([
       {
@@ -38,6 +38,7 @@ function playGame(guess){
       }else{
         console.log('Sorry you lose');
       }
+    }
     }
 
 playGame(10);

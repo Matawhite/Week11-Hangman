@@ -4,9 +4,9 @@ var game = require('./game.js');
 exports.LetterObj = function(){
   this.update = "";
   this.word = game.word;
-  this.start = "_".repeat(this.word.length) + " ";
+  this.start = "_".repeat(this.word.length);
   this.arrWord = this.word.split("");
-  this.updated;
+  this.updated
   this.output = this.start.split("");
   this.mainDisplay = function(userInput){
     for(var i = 0; i < this.word.length; i++){
