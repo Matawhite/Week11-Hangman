@@ -1,0 +1,19 @@
+{
+  "name": "week11-hangman",
+  "version": "1.0.0",
+  "description": "hangman game",
+  "main": "main.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matawhite/Week11-Hangman.git"
+  },
+  "author": "Matt White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Matawhite/Week11-Hangman/issues"
+  },
+  "homepage": "https://github.com/Matawhite/Week11-Hangman#readme"
+}
