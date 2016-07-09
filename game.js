@@ -3,7 +3,9 @@ var dictionary = [
     'tony',
     'hulk',
     'thor',
-    'wasp'
+    'wasp',
+    'time',
+    'marvel'
   ];
 
 exports.word = dictionary[Math.floor(Math.random() * dictionary.length)];

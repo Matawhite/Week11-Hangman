@@ -6,12 +6,13 @@ var letter = require('./letter');
 
 var newLetter = new letter.LetterObj();
 var newWordObj = new word.WordObj();
-console.log(game.wordArr);
+
+// uncomment line 10 for testing
+// console.log(game.word);
 
 function playGame(guess){
-  console.log('word: ' + game.word);
   if(newWordObj.winOrLose(newLetter.updated, guess)){
-    guess = 0;
+    // guess = 0;
     console.log('You Win!')
   }
   if(guess > 0){
@@ -21,19 +22,21 @@ function playGame(guess){
         message: 'Guess a letter.'
       }
       ]).then(function(answers) {
-        if(newWordObj.check(answers.letterGuessed)){
-        guess --;
-        console.log(newLetter.mainDisplay(answers.letterGuessed));
-        console.log('Guesses Left: ' + guess);
-        playGame(guess);
-      }else{
-        guess --
-        console.log('Sorry that letter is not found')
-        console.log(guess);
-        playGame(guess);
+        newWordObj.letterGuessedArr.push(answers.letterGuessed);
+        console.log('Letters Guessed: ' + newWordObj.letterGuessedArr);
+          if(newWordObj.check(answers.letterGuessed)){
+            console.log(newLetter.mainDisplay(answers.letterGuessed));
+            console.log('Guesses Left: ' + guess);
+            guess --;
+            playGame(guess);
+          }else{
+            guess --
+            console.log('Sorry that letter is not found')
+            console.log(guess);
+            playGame(guess);
+          }
+        })
       }
-    });
-  }
-}
+    }
 
 playGame(10);
