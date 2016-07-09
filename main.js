@@ -7,11 +7,11 @@ var letter = require('./letter');
 var newLetter = new letter.LetterObj();
 var newWordObj = new word.WordObj();
 
-// uncomment line 10 for testing
-// console.log(game.word);
+// uncomment line 11 for testing
+console.log(game.word);
 
 function playGame(guess){
-  if(newWordObj.winOrLose(newLetter.updated, guess)){
+  if(newWordObj.winOrLose(game.word,newLetter.updated)){
     // guess = 0;
     console.log('You Win!')
   }
@@ -36,6 +36,8 @@ function playGame(guess){
             playGame(guess);
           }
         })
+      }else{
+        console.log('Sorry you lose');
       }
     }
 

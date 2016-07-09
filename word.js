@@ -8,10 +8,10 @@ exports.WordObj = function(){
       return true;
     }
   }
-  this.winOrLose = function(word, guessCount){
-      if(!word.includes("_")){
+  this.winOrLose = function(word1, word2){
+    if(word1 == word2 ){
       return true;
     }
+  }
   this.letterGuessedArr = [];
-}
 }
